@@ -1,0 +1,78 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: #e8e6e6;
+  padding-left: 10rem;
+}
+
+.profile,
+.timing {
+  align-self: flex-start;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+img[data-testid="slackDisplayImage"] {
+  display: block;
+  width: auto;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+h1[data-testid="slackUserName"],
+h1[data-testid="myTrack"] {
+  font-size: 2.5rem;
+  border-left: 2px solid #fff;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+h1[data-testid="slackUserName"]>span,
+h1[data-testid="myTrack"]>span {
+  font-size: 1.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.timing {
+  display: flex;
+  gap: 2rem;
+
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.1);
+  padding: 6rem 3rem;
+}
+
+.timing__current {
+  font-size: 2.2rem;
+  font-weight: 600;
+}

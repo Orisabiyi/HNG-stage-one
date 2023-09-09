@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main">
+    <div class="profile">
+      <img src="img/profile-picture.jpg" alt="Orisabiyi" data-testid="slackDisplayImage">
+      <h1 data-testid="slackUserName"><span>Username:</span> Orisabiyi</h1>
+      <h1 data-testid="myTrack"><span>Track:</span> Front-end Track</h1>
+    </div>
+    <div class="timing">
+      <h2 class="timing__current">Current Day:<span class="currentDayOfTheWeek"
+          data-testid="currentDayOfTheWeek"></span>
+      </h2>
+      <h2 class="timing__current">Current Time: <span class="currentUTCTime" data-testid="currentUTCTime"></span></h2>
+    </div>
+  </main>
+</body>
+
+<script>
+  const currentDay = document.querySelector('.currentDayOfTheWeek');
+  const currentTime = document.querySelector('.currentUTCTime');
+  const date = new Date();
+  const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  currentDay.innerHTML = ' ' + weekday[date.getUTCDay()];
+  currentTime.innerHTML = ' ' + date.getUTCMilliseconds();
+</script>
+
+</html>
