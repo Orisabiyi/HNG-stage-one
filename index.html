@@ -30,12 +30,23 @@
 </body>
 
 <script>
+  // GLOBAL ENTITIES
   const currentDay = document.querySelector('.currentDayOfTheWeek');
   const currentTime = document.querySelector('.currentUTCTime');
-  const date = new Date();
-  const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  currentDay.innerHTML = ' ' + weekday[date.getUTCDay()];
-  currentTime.innerHTML = ' ' + date.getUTCMilliseconds();
+  // GENERATE DAY FUNCTION
+  const generateDay = function () {
+    const date = new Date();
+    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    currentDay.innerHTML = ' ' + weekday[date.getUTCDay()];
+  };
+  generateDay();
+  // GENERATE SECONDS FUNCTION
+  const generateMilliSeconds = function () {
+    const date = new Date();
+    currentTime.innerHTML = ' ' + date.getUTCMilliseconds();
+  }
+  generateMilliSeconds();
+  setInterval(generateMilliSeconds, 100);
 </script>
 
 </html>
